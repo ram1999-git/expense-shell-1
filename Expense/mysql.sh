@@ -3,13 +3,11 @@
 read -sp "Please Enter DB Root Password: " mysql_root_password
 echo
 
-source ./common.sh
+source ./common.sh  # Use source, not ./common.sh
 
+check_root  # Just call the function, don’t redeclare it
 
-check_root()
- 
 dnf install mysql-server -y &>>$Logfile
-
 validate $? "Installing MySQL Server"
 
 systemctl enable mysqld &>>$Logfile
