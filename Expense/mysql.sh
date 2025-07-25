@@ -3,6 +3,8 @@
 read -sp "Please Enter DB Root Password: " mysql_root_password
 echo
 
+./common.sh 
+
 check_root()
  
 dnf install mysql-server -y &>>$Logfile
